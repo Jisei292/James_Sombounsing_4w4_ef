@@ -30,18 +30,15 @@ get_header();
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
+                $titre = get_the_title();
+                $session = substr($titre,4,1);
 
-                get_template_part( 'template-parts/content', get_post_type() );
+            ?>
 
+            <p> <?php echo $session . " - " . $titre;  ?> </p>
+            <?php
 			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-				get_template_part( 'template-parts/content', 'none' );
-
-			endif; ?>
+		endif; ?>
 		
 
 	</main><!-- #main -->
