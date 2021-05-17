@@ -31,13 +31,17 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content', '' );
+                get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;?>
+			endwhile;
 
-			</section>
+			the_posts_navigation();
 
-		<?php endif; ?>
+		else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif; ?>
 		?>
 
 	</main><!-- #main -->
