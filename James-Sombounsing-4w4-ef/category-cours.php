@@ -28,14 +28,22 @@ get_header();
 			<section class="cours">
 			<?php
 			/* Start the Loop */
+            $precedent = 0;
 			while ( have_posts() ) :
 				the_post();
                 $titre = get_the_title();
                 $session = substr($titre,4,1);
 
             ?>
-
+            <?php
+			if ($session != $precedent){
+                echo "<p>Session : " . $session . "</p>";
+            }
+            $precedent = $session;
+            ?>
+            
             <p> <?php echo $session . " - " . $titre;  ?> </p>
+            <p> <?php the_content(); ?> </p>
             <?php
 			endwhile;
 		endif; ?>
