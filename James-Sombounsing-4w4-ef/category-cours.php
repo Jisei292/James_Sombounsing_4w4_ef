@@ -33,6 +33,8 @@ get_header();
 				the_post();
                 $titre = get_the_title();
                 $session = substr($titre,4,1);
+                $contenu = get_the_content();
+                $resume = substr($contenu, 0, 200);
 
             ?>
             <?php
@@ -43,7 +45,7 @@ get_header();
             ?>
             
             <p> <?php echo $session . " - " . $titre;  ?> </p>
-            <p> <?php the_content(); ?> </p>
+            <p> <?php echo $resume; ?> </p>
             <?php
 			endwhile;
 		endif; ?>
