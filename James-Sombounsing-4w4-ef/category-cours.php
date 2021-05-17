@@ -25,13 +25,13 @@ get_header();
 				?>	
 			
 			</header><!-- .page-header -->
-			<section class="galerie">
+			<section class="cours">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content', 'cours-article' );
+				get_template_part( 'template-parts/content', '' );
 
 			endwhile;?>
 
