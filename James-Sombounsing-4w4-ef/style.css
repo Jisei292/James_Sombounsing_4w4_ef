@@ -1267,6 +1267,18 @@ Liste des blocs de cours par type_de_cours
   }
 }
 
+.ctrl-typecours {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.ctrl-typecours .rad-cours {
+  display: block;
+  margin: .5rem .8rem .5rem .8rem;
+  color: lime;
+}
+
 /* local carrousel
 --------------------------------------------- */
 .carrousel {

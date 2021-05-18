@@ -1,11 +1,11 @@
 (function(){
 	/* Idntifier la collection de carrousel */
 		let typeCours = document.querySelectorAll($tPropriété['type_de_cours'])
-		let ctrltypeCours = document.querySelectorAll($tPropriété['Cours'])
-        let noctrltypeCours = 0;
+		let ctrltypecours = document.querySelectorAll($tPropriété['Cours'])
+        let noctrltypecours = 0;
 		for (const elmCours of typeCours)
 		{
-			let bout = ctrltypeCours[noctrltypeCours++].querySelectorAll('.rad-cours')
+			let bout = ctrltypecours[noctrltypecours++].querySelectorAll('.rad-cours')
 	
 			console.log(bout.length)
 
