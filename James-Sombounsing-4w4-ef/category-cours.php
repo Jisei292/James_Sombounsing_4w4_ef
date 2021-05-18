@@ -31,25 +31,34 @@ get_header();
             $precedent = 0;
 			while ( have_posts() ) :
 				the_post();
-                $titre = get_the_title();
-                $session = substr($titre,4,1);
-                $contenu = get_the_content();
+                $titre_grand = get_the_title();
+				//$sigle = substr($titre_grand,0,7)
+				//$nbHeure = substr($titre_grand,-4,4)
+				//$titrePartiel = substr($titre_grand,8,-6)
+                $session = substr($titre_grand,4,1);
+				$contenu = get_the_content();
                 $resume = substr($contenu, 0, 200);
 				$typeCours = get_field('type_de_cours');
 
             ?>
+			<article>
+			<p> <?php echo $typeCours . " - " . $session . " - " . $titre_grand;  ?> </p>
+			<a href="<?php echo get_permalink() ?>"><?php echo $titre_grand; ?> </a>
+			<p> Session : <?php echo $session ?> </p>
+			
+			</article>
+
+
             <?php
 			if ($session != $precedent){
                 echo "<p>Session : " . $session . "</p>";
             }
             $precedent = $session;
             ?>
-            
-            <p> <?php echo $typeCours . " - " . $session . " - " . $titre;  ?> </p>
-            <p> <?php echo $resume; ?> </p>
-            <?php
-			endwhile;
-		endif; ?>
+
+            <?php endwhile;?>
+			</section>
+			<?php endif; ?>
 		
 
 	</main><!-- #main -->
