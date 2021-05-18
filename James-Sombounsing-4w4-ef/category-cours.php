@@ -35,6 +35,7 @@ get_header();
                 $session = substr($titre,4,1);
                 $contenu = get_the_content();
                 $resume = substr($contenu, 0, 200);
+				$typeCours = get_field('type_de_cours');
 
             ?>
             <?php
@@ -44,7 +45,7 @@ get_header();
             $precedent = $session;
             ?>
             
-            <p> <?php echo $session . " - " . $titre;  ?> </p>
+            <p> <?php echo $typeCours . " - " . $session . " - " . $titre;  ?> </p>
             <p> <?php echo $resume; ?> </p>
             <?php
 			endwhile;
