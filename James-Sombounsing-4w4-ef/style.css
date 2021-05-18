@@ -1218,30 +1218,33 @@ Liste des blocs de cours par type_de_cours
 .list-cours {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .list-cours section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
-.list-cours section article {
+.list-cours article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 30%;
+  border: 1px solid black;
 }
 
-.list-cours section article p {
-  font-size: 3rem;
+.list-cours article p {
+  font-size: .7rem;
   font-weight: bold;
 }
 
-.list-cours section article a {
-  font-size: 1.5rem;
+.list-cours article a {
+  font-size: .5rem;
   font-weight: bold;
+  text-decoration: none;
 }
 
 /* local carrousel
