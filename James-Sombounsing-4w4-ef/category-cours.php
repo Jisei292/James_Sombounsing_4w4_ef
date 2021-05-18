@@ -48,16 +48,15 @@ get_header();
 					<?php endif; ?>
 					<section>
 				<?php endif; ?>
-
-			<article>
-				<p> <?php echo $typeCours;  ?> </p>
-				<a href="<?php echo get_permalink() ?>"><?php echo $sigle; ?> </a>
-				<p><?php echo $nbHeure ?> </p>
-			
-			</article>
+			<div><h2><?php echo $session ?></h2></div>
+				<article>
+					<p> <?php echo $typeCours;  ?> </p>
+					<a href="<?php echo get_permalink() ?>"><?php echo $sigle; ?> </a>
+					<p><?php echo $nbHeure ?> </p>
+				</article>
 
             <?php
-			$precedent = $typeCours;
+			$precedent = $titre;
 			endwhile;?>
 			
 		</section>
