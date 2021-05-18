@@ -105,3 +105,27 @@ Liste des blocs de cours par type_de_cours
     height : 10vh;
 }
 
+.list-cours{
+    display: flex;
+    flex-direction: column;
+    section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        article{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 30%;
+            p{
+                font-size: 3rem;
+                font-weight: bold;
+            }
+            a{
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
