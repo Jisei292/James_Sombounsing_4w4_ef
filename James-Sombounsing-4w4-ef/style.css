@@ -1220,44 +1220,48 @@ Liste des blocs de cours par type_de_cours
   flex-direction: column;
 }
 
-.list-cours section {
+.list-cours div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.list-cours section div {
+.list-cours div h2 {
+  font-size: 7rem;
+}
+
+.list-cours div article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   border: 1px solid black;
-  width: 35%;
+  width: 17%;
   margin: 1%;
   padding: 1rem;
   text-align: center;
 }
 
-.list-cours section div p {
+.list-cours div article p {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.list-cours section div a {
+.list-cours div article a {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
 }
 
 @media (min-width: 800px) {
-  .list-cours section div article {
+  .list-cours div article article {
     width: 47%;
     margin: 1%;
   }
 }
 
 @media (min-width: 1200px) {
-  .list-cours section div article {
+  .list-cours div article article {
     width: 31%;
     margin: 1%;
   }

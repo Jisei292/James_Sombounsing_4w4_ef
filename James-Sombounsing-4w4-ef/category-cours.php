@@ -34,23 +34,21 @@ get_header();
 				convertirTableau($tPropriété);
 
 
-				if ($tPropriété['typeCours'] != $precedent):
+				if ($tPropriété['session'] != $precedent):
 					if ("XXXXXX" != $precedent):?>
-					</section>
-					<?php endif; ?>
-					<h2><?php echo $tPropriété['session'] ?></h2>
-					<section class="session">
-				<?php endif; ?>
-			<div>
-				<arcticle>
-			<?php get_template_part( 'template-parts/content', 'cours-article' ); ?>
-				</arcticle>
-				</div>
+					</div>
+						<?php endif; ?>
+						<div>
+							<h2><?php echo $tPropriété['session'] ?></h2>
+						<?php endif; ?>
+							<?php get_template_part( 'template-parts/content', 'cours-article' ); ?>
+				
 
             <?php
-			$precedent = $tPropriété['titre'];
+			$precedent = $tPropriété['session'];
 			endwhile;?>
 			
+		</div>
 		</section>
 		<?php endif; ?>
 		
@@ -79,6 +77,6 @@ function convertirTableau(&$tPropriété)
 	$tPropriété['sigle'] = substr($tPropriété['titre'], 0, 7);
 	$tPropriété['nbHeure'] = substr($tPropriété['titre'],-4,3);
 	$tPropriété['titrePartiel'] = substr($tPropriété['titre'],8,-6);
-	$tPropriété['session'] = substr($tPropriété['titre'], 4,1);
+	$tPropriété['session'] = get_field('session');
 	$tPropriété['typeCours'] = get_field('type_de_cours');
 }
