@@ -1537,7 +1537,7 @@ La barre du millieu
 }
 
 .page-header .archive-description p, .entry-header .archive-description p {
-  margin: 0;
+  margin: 3;
 }
 
 /* local footer
