@@ -1160,13 +1160,13 @@ Liste des blocs de cours par type_de_cours
   text-align: center;
 }
 
-.home .cours section.bloc {
+.home .cours section.session {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.home .cours section.bloc article {
+.home .cours section.session article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1178,26 +1178,26 @@ Liste des blocs de cours par type_de_cours
   text-align: center;
 }
 
-.home .cours section.bloc article p {
+.home .cours section.session article p {
   margin: .4rem;
   font-size: 1rem;
 }
 
-.home .cours section.bloc article a {
+.home .cours section.session article a {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
 }
 
 @media (min-width: 800px) {
-  .home .cours section.bloc article {
+  .home .cours section.session article {
     width: 47%;
     margin: 1%;
   }
 }
 
 @media (min-width: 1200px) {
-  .home .cours section.bloc article {
+  .home .cours section.session article {
     width: 31%;
     margin: 1%;
   }
@@ -1226,7 +1226,7 @@ Liste des blocs de cours par type_de_cours
   flex-wrap: wrap;
 }
 
-.list-cours section article {
+.list-cours section div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1238,26 +1238,26 @@ Liste des blocs de cours par type_de_cours
   text-align: center;
 }
 
-.list-cours section article p {
+.list-cours section div p {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.list-cours section article a {
+.list-cours section div a {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
 }
 
 @media (min-width: 800px) {
-  .list-cours section article article {
+  .list-cours section div article {
     width: 47%;
     margin: 1%;
   }
 }
 
 @media (min-width: 1200px) {
-  .list-cours section article article {
+  .list-cours section div article {
     width: 31%;
     margin: 1%;
   }

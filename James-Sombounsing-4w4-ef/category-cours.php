@@ -31,32 +31,24 @@ get_header();
             $precedent = "XXXXXX";
 			while ( have_posts() ) :
 				the_post();
+				convertirTableau($tPropriété);
 
-                $titre_grand = get_the_title();
-				$sigle = substr($titre_grand,0,7);
-				$nbHeure = substr($titre_grand,-4,3);
-				$titrePartiel = substr($titre_grand,8,-6);
-				$titre = substr($titre_grand,8,-6);
-                $session = substr($titre_grand,4,1);
-				$contenu = get_the_content();
-                $resume = substr($contenu, 0, 200);
-				$typeCours = get_field('type_de_cours');
 
-				if ($typeCours != $precedent):
+				if ($tPropriété['typeCours'] != $precedent):
 					if ("XXXXXX" != $precedent):?>
 					</section>
 					<?php endif; ?>
-					<section>
+					<h2><?php echo $tPropriété['session'] ?></h2>
+					<section class="session">
 				<?php endif; ?>
-			<div><h2><?php echo $session ?></h2></div>
-				<article>
-					<p> <?php echo $typeCours;  ?> </p>
-					<a href="<?php echo get_permalink() ?>"><?php echo $sigle; ?> </a>
-					<p><?php echo $nbHeure ?> </p>
-				</article>
+			<div>
+				<arcticle>
+			<?php get_template_part( 'template-parts/content', 'cours-article' ); ?>
+				</arcticle>
+				</div>
 
             <?php
-			$precedent = $titre;
+			$precedent = $tPropriété['titre'];
 			endwhile;?>
 			
 		</section>
@@ -68,3 +60,25 @@ get_header();
 <?php
 // get_sidebar();
 get_footer();
+
+function convertirTableau(&$tPropriété)
+{
+	/*
+	$titre = get_the_title();
+	$sigle = substr($titre,0,7);
+	$nbHeure = substr($titre,-4,3);
+	$titrePartiel = substr($titre,8,-6);
+	$titre = substr($titre,8,-6);
+    $session = substr($titre,4,1);
+	$contenu = get_the_content();
+    $resume = substr($contenu, 0, 200);
+	$typeCours = get_field('type_de_cours');
+*/
+
+	$tPropriété['titre'] = get_the_title(); 
+	$tPropriété['sigle'] = substr($tPropriété['titre'], 0, 7);
+	$tPropriété['nbHeure'] = substr($tPropriété['titre'],-4,3);
+	$tPropriété['titrePartiel'] = substr($tPropriété['titre'],8,-6);
+	$tPropriété['session'] = substr($tPropriété['titre'], 4,1);
+	$tPropriété['typeCours'] = get_field('type_de_cours');
+}
